@@ -41,14 +41,11 @@ return {
 
   -- file managing , picker etc
   {
-    {   "nvim-neo-tree/neo-tree.nvim",
-		name = "neotree",
-    branch = "v3.x",
-    dependencies = {
-      "nvim-lua/plenary.nvim",
-      "nvim-tree/nvim-web-devicons",
-			"MunifTanjim/nui.nvim",
-      }
+    "nvim-tree/nvim-tree.lua",
+    cmd = { "NvimTreeToggle", "NvimTreeFocus" },
+    opts = function()
+      return require "nvchad.configs.nvimtree"
+    end,
   },
 
   {
