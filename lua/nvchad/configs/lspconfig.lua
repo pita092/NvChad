@@ -7,12 +7,17 @@ M.on_attach = function(_, bufnr)
     return { buffer = bufnr, desc = "LSP " .. desc }
   end
 
-  map("n", "gD", vim.lsp.buf.declaration, opts "Go to declaration")
-  map("n", "gd", vim.lsp.buf.definition, opts "Go to definition")
-  map("n", "gi", vim.lsp.buf.implementation, opts "Go to implementation")
-  map("n", "<leader>sh", vim.lsp.buf.signature_help, opts "Show signature help")
-  map("n", "<leader>wa", vim.lsp.buf.add_workspace_folder, opts "Add workspace folder")
-  map("n", "<leader>wr", vim.lsp.buf.remove_workspace_folder, opts "Remove workspace folder")
+    map('gd', require('telescope.builtin').lsp_definitions, '[G]oto [D]efinition')
+    map('gr', require('telescope.builtin').lsp_references, '[G]oto [R]eferences')
+    map('gI', require('telescope.builtin').lsp_implementations, '[G]oto [I]mplementation')
+    map('<leader>D', require('telescope.builtin').lsp_type_definitions, 'Type [D]efinition')
+    map('<leader>ds', require('telescope.builtin').lsp_document_symbols, '[D]ocument [S]ymbols')
+    map('<leader>ws', require('telescope.builtin').lsp_dynamic_workspace_symbols, '[W]orkspace [S]ymbols')
+    map('<leader>w', vim.lsp.buf.rename, '[R]e[n]ame')
+    map('<leader>a', vim.lsp.buf.code_action, '[C]ode [A]ction')
+    map('gD', vim.lsp.buf.declaration, '[G]oto [D]eclaration')
+    map('K', vim.lsp.buf.hover, 'context menu')
+
 
   map("n", "<leader>wl", function()
     print(vim.inspect(vim.lsp.buf.list_workspace_folders()))
