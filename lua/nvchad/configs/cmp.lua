@@ -69,20 +69,8 @@ local options = {
   },
 
   window = {
-    completion = {
-        completion = borderstyle,
-    documentation = borderstyle,
-      scrollbar = false,
-    },
-    documentation = {
-      border = border "CmpDocBorder",
-      winhighlight = "Normal:CmpDoc",
-    },
-  },
-  snippet = {
-    expand = function(args)
-      require("luasnip").lsp_expand(args.body)
-    end,
+     completion = borderstyle,
+    documentation = borderstyle.  
   },
 
   formatting = formatting_style,
