@@ -10,6 +10,7 @@ local options = {
     update_root = false,
   },
   view = {
+    side = 'right',
     width = 30,
     preserve_window_proportions = true,
   },
