@@ -148,5 +148,3 @@ cmp.setup.cmdline('-', { enabled = false })
 cmp.setup.cmdline('=', { enabled = false })
 
 end
-
-return options
